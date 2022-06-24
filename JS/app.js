@@ -76,4 +76,8 @@ async function getResult(){
           result.innerHTML = `<h3>Please enter a valid country name.</h3>`;
         }
       });
+      setInterval(
+        function() {
+          document.getElementById("country-input").value = "";
+        }, 3000);
 }
