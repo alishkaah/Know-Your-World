@@ -60,6 +60,7 @@ searchBtn.addEventListener("click", () => {
             </div>
         </div>` 
     })
+    
     .catch(() => {
         if (countryName.length == 0) {
           result.innerHTML = `<h3>You have not Entered a country Name</h3>`;
@@ -67,4 +68,9 @@ searchBtn.addEventListener("click", () => {
           result.innerHTML = `<h3>Please enter a valid country name.</h3>`;
         }
       });
+      //clear input after 4 seconds
+      setInterval(
+        function() {
+          document.getElementById("country-input").value = "";
+        }, 4000);
 })
