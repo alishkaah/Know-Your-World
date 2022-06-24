@@ -34,6 +34,7 @@ As a user of the web app,you will be able to :
  [Go Back to the top](#)
 ### Live Link
 - Click this link to view the live application 
+- https://alishkaah.github.io/Know-Your-World/
 ### Technology Used
 * HTML - which was used to develop the structure of the pages.
 * CSS - which was used to style the User Interface.
