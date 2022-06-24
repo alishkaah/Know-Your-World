@@ -79,5 +79,5 @@ async function getResult(){
       setInterval(
         function() {
           document.getElementById("country-input").value = "";
-        }, 3000);
+        }, 5000);
 }
