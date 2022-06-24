@@ -58,6 +58,13 @@ searchBtn.addEventListener("click", () => {
                   .split(",")
                   .join(", ")}</span>
             </div>
-        </div>`
+        </div>` 
     })
+    .catch(() => {
+        if (countryName.length == 0) {
+          result.innerHTML = `<h3>You have not Entered a country Name</h3>`;
+        } else {
+          result.innerHTML = `<h3>Please enter a valid country name.</h3>`;
+        }
+      });
 })
