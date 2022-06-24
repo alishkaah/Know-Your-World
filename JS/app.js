@@ -12,7 +12,6 @@ navBarToggle.addEventListener("click", function() {
 let searchBtn = document.getElementById("search-btn");
 let countryInp = document.getElementById("country-input");
 let result  = document.getElementById('result');
-
 countryInp.addEventListener("keypress", function(event) {
   // If the user presses the "Enter" key on the keyboard
   if (event.key === "Enter") {
@@ -21,11 +20,11 @@ countryInp.addEventListener("keypress", function(event) {
 searchBtn.addEventListener("click", getResult);
 
 
-function getResult(){
+async function getResult(){
     let countryName = countryInp.value;
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
     // console.log(finalURL);
-    fetch(finalURL)
+    await fetch(finalURL)
     .then((response) => response.json())
     .then((data) => {
         // console.log(data);
@@ -77,4 +76,8 @@ function getResult(){
           result.innerHTML = `<h3>Please enter a valid country name.</h3>`;
         }
       });
+      setInterval(
+        function() {
+          document.getElementById("country-input").value = "";
+        }, 5000);
 }
