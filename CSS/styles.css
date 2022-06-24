@@ -82,4 +82,37 @@
   .active{
     display: flex;
   }
+  /* responsive */
+
+@media screen and (min-width: 800px) {
+    nav {
+      height: 100px;
+      flex-direction: row;
+    }
+  
+    .logo {
+      padding-left: 50px;
+      margin: 0;
+      width: 20%;
+    }
+  
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      width: 80%;
+      flex-direction: row;
+    }
+  
+    ul li {
+      display: inline-block;
+      margin: 0 70px 0 0;
+      text-align: left;
+      border-bottom-style: none;
+      padding: 0;
+    }
+  
+    span.nav-toggle {
+      display: none;
+    }
+  }
   
