@@ -1,5 +1,6 @@
 
-
+//once content load do as instructed
+document.addEventListener('DOMContentLoaded', getResult)
 //nav-bar toggle 
 let mainNav = document.getElementById("js-menu");
 let navBarToggle = document.getElementById("js-nav-toggle");
@@ -11,7 +12,16 @@ navBarToggle.addEventListener("click", function() {
 let searchBtn = document.getElementById("search-btn");
 let countryInp = document.getElementById("country-input");
 let result  = document.getElementById('result');
-searchBtn.addEventListener("click", () => {
+
+countryInp.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    getResult()
+  }})
+searchBtn.addEventListener("click", getResult);
+
+
+function getResult(){
     let countryName = countryInp.value;
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
     // console.log(finalURL);
@@ -60,7 +70,6 @@ searchBtn.addEventListener("click", () => {
             </div>
         </div>` 
     })
-    
     .catch(() => {
         if (countryName.length == 0) {
           result.innerHTML = `<h3>You have not Entered a country Name</h3>`;
@@ -68,9 +77,4 @@ searchBtn.addEventListener("click", () => {
           result.innerHTML = `<h3>Please enter a valid country name.</h3>`;
         }
       });
-      //clear input after 4 seconds
-      setInterval(
-        function() {
-          document.getElementById("country-input").value = "";
-        }, 4000);
-})
+}
