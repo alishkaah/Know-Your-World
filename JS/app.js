@@ -1,6 +1,7 @@
 
 //once content load do as instructed
 document.addEventListener('DOMContentLoaded', getResult)
+
 //nav-bar toggle 
 let mainNav = document.getElementById("js-menu");
 let navBarToggle = document.getElementById("js-nav-toggle");
@@ -28,8 +29,6 @@ async function getResult(){
     .then((response) => response.json())
     .then((data) => {
         // console.log(data);
-        // console.log(data[0]);
-        // console.log(Object.keys(data[0].currencies)[0]);
         // console.log(data[0].currencies[Object.keys(data[0].currencies)].name);
         result.innerHTML = `
         <img src="${data[0].flags.svg}" class="flag-img">
@@ -79,5 +78,5 @@ async function getResult(){
       setInterval(
         function() {
           document.getElementById("country-input").value = "";
-        }, 5000);
+        }, 7000);
 }
